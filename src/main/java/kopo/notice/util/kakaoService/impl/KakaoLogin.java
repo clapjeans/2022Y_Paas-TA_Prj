@@ -29,7 +29,6 @@ import kopo.notice.util.kakaoService.comm.KakaoServiceLog;
  * | 2022.02.12 |  최별규     |  초안 작성
  * 카카오 로그인 순서 :  OAUTH2(인증코드 -> 접근 토큰 -> 사용자 정보 가져오기 -> 로그인)
  * */
-@Service("KakaoLogin")
 public class KakaoLogin extends KakaoServiceLog implements IKakaoInfo, IKakaoLogin{
 	// => 카카오 서버로부터 인증코드를 발급받는 메서드
 	@Override
