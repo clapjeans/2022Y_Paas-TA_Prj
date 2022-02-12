@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Hello World
+	Spring Boot Frame Work Version 1.0.0
 </body>
 </html>
