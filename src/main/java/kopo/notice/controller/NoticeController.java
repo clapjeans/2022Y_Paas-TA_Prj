@@ -1,20 +1,26 @@
 package kopo.notice.controller;
 
 
-import kopo.notice.controller.comm.AbstractController;
-import kopo.notice.dto.NoticeDTO;
-import kopo.notice.service.INoticeService;
-import kopo.notice.util.CmmUtil;
-import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
-import org.springframework.web.bind.annotation.*;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.List;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import kopo.notice.controller.comm.AbstractController;
+import kopo.notice.dto.NoticeDTO;
+import kopo.notice.service.INoticeService;
+import kopo.notice.util.CmmUtil;
+import kopo.notice.util.kakaoService.IKakaoLogin;
 
 
 /*
@@ -29,6 +35,21 @@ public class NoticeController extends AbstractController {
 	 */
 	@Resource(name = "NoticeService")
 	private INoticeService noticeService;
+	@Resource(name = "KakaoLogin")
+	private IKakaoLogin kakao;
+	
+	@RequestMapping(value="/kakaoLoginProc")
+	public String kakaoLoginProc(ModelMap model) throws Exception {
+		log.info(this.getClass().getName() + "kakaoLogin Start!");
+		String forKakao = kakao.getAuthCode(); // 카카오 접속을 위한 실행
+		log.info(forKakao);
+		String msg = "카카오 로그인 시도";
+		String url = forKakao;
+		model.addAttribute("msg", msg);
+		model.addAttribute("url", url); // 완성된 호출 url을 jsp에서 처리하도록 리다이렉팅
+		log.info(this.getClass().getName() + "kakaoLogin End");
+		return "/user/redirect";
+	}
 
 	/*
 	 * 함수명 위의 value="notice/NoticeList" => /notice/NoticeList.do로 호출되는 url은 무조건 이
