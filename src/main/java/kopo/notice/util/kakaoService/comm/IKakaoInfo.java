@@ -1,6 +1,6 @@
 package kopo.notice.util.kakaoService.comm;
 /* @Auth 최별규
- * @Version 1.0
+ * @Version 1.1
  * Kakao API를 사용하기 위한 private한 정보를 담는 인터페이스
  *  ____________________________________________________________________________________
  * |   작성일     |   작성자    |                          내용                        |

@@ -5,7 +5,8 @@ target/
 !**/src/test/**/target/
 
 ### application.properties  => 요녀석 디비 정보 담고 있어서 뺐음###
-/src/main/resources/application.properties 
+/src/main/resources/application.properties
+/src/main/java/kopo/notice/util/kakaoService/comm/IKakaoInfo.java
 
 ### STS ###
 .apt_generated
