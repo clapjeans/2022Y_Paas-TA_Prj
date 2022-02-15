@@ -1,15 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- JAVA와 연결할 Mapper 파일 설정 -->
-<mapper namespace="paasta.demo.persistance.mapper.UserInfoMapper">
+<mapper namespace="paasta.demo.persistance.mapper.UserMapper">
 
 	<!-- 로그인 쿼리 -->
-	<select id="getUserInfo" resultType="UserInfoDTO">
-	SELECT * 
+	<select id="getUserInfo" resultType="UserDTO">
+	SELECT 
+		USER_EMAIL,
+		USER_ID,
+		USER_NAME,
+		USER_ADDR
 	FROM 
 		USER_INFO 
 	WHERE 
-		USER_ID=#{user_id} and PASSWORD={password};
+		USER_ID=#{user_id} and PASSWORD=#{password};
 	</select>
 			
 </mapper>

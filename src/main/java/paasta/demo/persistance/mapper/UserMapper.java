@@ -8,6 +8,6 @@ import paasta.demo.dto.UserDTO;
 @Mapper
 public interface UserMapper {
 
-	void getUserInfo(UserDTO uDTO); // => 사용자 정보 가져오기
+	UserDTO getUserInfo(UserDTO uDTO); // => 사용자 정보 가져오기
 	
 }

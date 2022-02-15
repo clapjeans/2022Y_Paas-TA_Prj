@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	Spring Boot Frame Work Version 1.0.0
+	Spring Boot Frame Work Version 1.0.0 로긴 성공
 </body>
 </html>

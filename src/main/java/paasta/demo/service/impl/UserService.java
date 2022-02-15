@@ -18,12 +18,22 @@ public class UserService extends AbstractService implements IUserInfoService {
 	public int getUserInfo(String user_id, String password) {
 		log.info(this.getClass().getName() + "getUserInfo Service Start");
 		int res = 0;
+		
+		UserDTO pDTO = new UserDTO();
+		pDTO.setUser_id(user_id);
+		pDTO.setPassword(password);
+		
 		UserDTO uDTO = new UserDTO();
-		uDTO.setUser_id(user_id);
-		uDTO.setPassword(password);
-		userMapper.getUserInfo(uDTO);
+		uDTO = userMapper.getUserInfo(pDTO);
+		
+		if(uDTO != null) {
+			res = 1;
+		}
+		
+		log.info("user_id : " + uDTO.getUser_id());
+		log.info("user_name : " + uDTO.getUser_name());
 		log.info(this.getClass().getName() + "getUserInfo Service End");
-		return 0;
+		return res;
 	}
 
 }
