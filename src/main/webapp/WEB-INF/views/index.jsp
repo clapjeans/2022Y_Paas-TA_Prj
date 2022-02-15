@@ -9,4 +9,5 @@
 <body>
 	Spring Boot Frame Work Version 1.0.0 로긴 성공
 </body>
+<!-- <script src="/js/test.js"></script>  -->
 </html>

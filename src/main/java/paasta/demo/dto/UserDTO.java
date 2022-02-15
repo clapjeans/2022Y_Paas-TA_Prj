@@ -11,7 +11,14 @@ public class UserDTO {
     private String password; // 비밀번호
     private String user_name; // 이름
     private String user_addr; //주소
+    private String access_token; // 카카오 로그인 및 톡 발송용 토큰
     
+	public String getAccess_token() {
+		return access_token;
+	}
+	public void setAccess_token(String access_token) {
+		this.access_token = access_token;
+	}
 	public String getUser_email() {
 		return user_email;
 	}

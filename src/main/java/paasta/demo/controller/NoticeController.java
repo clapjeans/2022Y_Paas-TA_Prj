@@ -38,18 +38,6 @@ public class NoticeController extends AbstractController {
 	@Resource(name = "KakaoLoginService")
 	private IKakaoLogin kakao;
 	
-	@RequestMapping(value="/kakaoLoginProc")
-	public String kakaoLoginProc(ModelMap model) throws Exception {
-		log.info(this.getClass().getName() + "kakaoLogin Start!");
-		String forKakao = kakao.getAuthCode(); // 카카오 접속을 위한 실행
-		log.info(forKakao);
-		String msg = "카카오 로그인 시도";
-		String url = forKakao;
-		model.addAttribute("msg", msg);
-		model.addAttribute("url", url); // 완성된 호출 url을 jsp에서 처리하도록 리다이렉팅
-		log.info(this.getClass().getName() + "kakaoLogin End");
-		return "/user/redirect";
-	}
 
 	/*
 	 * 함수명 위의 value="notice/NoticeList" => /notice/NoticeList.do로 호출되는 url은 무조건 이

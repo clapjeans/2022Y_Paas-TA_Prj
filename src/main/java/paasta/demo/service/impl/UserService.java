@@ -28,12 +28,17 @@ public class UserService extends AbstractService implements IUserInfoService {
 		
 		if(uDTO != null) {
 			res = 1;
+			log.info("user_id : " + uDTO.getUser_id());
+			log.info("user_name : " + uDTO.getUser_name());
 		}
-		
-		log.info("user_id : " + uDTO.getUser_id());
-		log.info("user_name : " + uDTO.getUser_name());
 		log.info(this.getClass().getName() + "getUserInfo Service End");
 		return res;
+	}
+	//=> 카카오 로그인 시도
+	@Override
+	public UserDTO kakaoLoginProc(UserDTO pDTO) {
+		log.info(this.getClass().getName() + "카카오로그인 이메일 -> 서비스 로그인 시도");
+		return userMapper.getUserInfoKakao(pDTO);
 	}
 
 }
