@@ -11,8 +11,8 @@
     <groupId>teamKamoMill</groupId>
     <artifactId>paasTa</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>notice</name>
-    <description>notice</description>
+    <name>paasTa</name>
+    <description>paasTa</description>
     <properties>
         <java.version>1.8</java.version>
     </properties>
@@ -27,41 +27,70 @@
                 </exclusion>
             </exclusions>
         </dependency>
-
+<!-- =============================필요한 라이브러리의 의존성을 주입 해주는 시작점 ======================================= -->
+<!-- mysql 커넥터 설정 -->
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/org.json/json -->
+<!-- JSON 라이브러리 추가 2 -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20160810</version>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+<!-- JSON 구글 라이브러리 추가 1 -->
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>2.8.6</version>
+		</dependency>
+<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+<!-- Log4J2 추가 -->
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>2.17.1</version>
+		</dependency>
+<!-- myBatis 의존성 주입 -->
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
             <version>2.2.1</version>
         </dependency>
-
+<!-- jdbc 의존성 주입 -->
         <dependency>
             <groupId>com.oracle.database.jdbc</groupId>
             <artifactId>ojdbc8</artifactId>
             <scope>runtime</scope>
         </dependency>
+<!-- 롬복 라이브러리 셋팅 -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+<!-- 메이븐으로 Boot를 시작하기 위한 라이브러리 셋팅 -->        
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-
+<!--HttpServlet 의존성 주입-->
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>1.2</version>
         </dependency>
-
+<!-- 메이븐 프로젝트에 스프링 부트와 JSP를 함께 쓰기 위한 내장 톰캣 셋팅-->
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
         </dependency>
-
+<!-- =============================================================================================== -->
     </dependencies>
 
     <build>

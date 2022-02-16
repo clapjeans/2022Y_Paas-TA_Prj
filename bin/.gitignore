@@ -1,8 +1,16 @@
+# gitignore Setting. 2022.02.13 Dev.Choi
+# 적용 안되면 git rm -r --cached . 
+# 하고선 터미널 새로 켜고 다시 시도
+
 HELP.md
 target/
 !.mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+
+### 민감정보 삭제(by CHOI) ###
+src/main/resources/application.properties
+src/main/**/IKakaoInfo.java
 
 ### STS ###
 .apt_generated
